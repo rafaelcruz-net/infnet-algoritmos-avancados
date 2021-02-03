@@ -12,11 +12,18 @@ public class LinkedList<V> {
     public void addFront(V item) {
         this.head = new Node<>(item, head);
     }
+    
+    public void addAfter(Node<V> aNode, V item) {
+        aNode.setNext(new Node<>(item, aNode.getNext().orElse(null)));
+    }
 
     public void deleteFront() {
         Optional<Node<V>> firstNode = Optional.ofNullable(this.head);
         this.head = firstNode.flatMap(Node::getNext).orElse(null);
-        firstNode.ifPresent(n -> n.setNext(null));
+        firstNode.ifPresent(n -> {
+            n.setValue(null);
+            n.setNext(null);  
+        });
     }
 
     public Optional<Node<V>> find(V item) {
@@ -26,10 +33,7 @@ public class LinkedList<V> {
         }
         return node;
     }
-
-    public void addAfter(Node<V> aNode, V item) {
-        aNode.setNext(new Node<>(item, aNode.getNext().orElse(null)));
-    }
+  
 
     public String toString() {
         Optional<Node<V>> node = Optional.ofNullable(this.head);
