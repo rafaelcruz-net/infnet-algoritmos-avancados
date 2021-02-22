@@ -8,7 +8,7 @@ public class DoublyLinkedList<V> {
         Node<V> newNode = new Node<V>(data);
 
         newNode.setNext(head);
-        newNode.setPrevious(null);
+        newNode.setPrevious(head);
 
         if (head != null) {
             head.setPrevious(newNode);
@@ -24,7 +24,7 @@ public class DoublyLinkedList<V> {
     public void insertLast(V data) {
         Node<V> newNode = new Node<V>(data);
 
-        newNode.setNext(null);
+        newNode.setNext(tail);
         newNode.setPrevious(tail);
 
         if (tail != null)
