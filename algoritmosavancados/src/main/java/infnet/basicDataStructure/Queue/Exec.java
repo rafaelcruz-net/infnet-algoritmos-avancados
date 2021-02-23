@@ -17,6 +17,20 @@ public class Exec {
         System.out.println(queue.dequeue());
 
 
+        QueueNode<String> queueNode = new QueueNode<String>();
+        queueNode.enqueue("Nome1");
+        queueNode.enqueue("Nome2");
+        queueNode.enqueue("Nome3");
+        queueNode.enqueue("Nome4");
+        queueNode.enqueue("Nome5");
+        queueNode.enqueue("Nome6");
+
+        System.out.println(queueNode.dequeue());
+        System.out.println(queueNode.dequeue());
+        System.out.println(queueNode.dequeue());
+        System.out.println(queueNode.dequeue());
+        System.out.println(queueNode.dequeue());
+        System.out.println(queueNode.dequeue());
     }
 
 

@@ -3,7 +3,7 @@ package infnet.basicDataStructure.Queue;
 import java.util.ArrayList;
 
 public class Queue<V> {
-    public ArrayList<V> backField;
+    private ArrayList<V> backField;
 
     public Queue() {
         this.backField = new ArrayList<V>();
